@@ -14,7 +14,7 @@ const CnViewKey = cn('viewKey')
 
 export const ViewKey = () => {
     const { connected } = useConnect()
-    const { viewKey, loading, error, requestViewKey } = useViewKey()
+    const { viewKey, loading, error, requestViewKey } = useViewKey({ enabled: false })
 
     return (
         <div className={CnViewKey()}>
