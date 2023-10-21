@@ -4,10 +4,12 @@ import { LeoWalletName } from '@demox-labs/aleo-wallet-adapter-leo'
 import { Button } from '../button'
 import { cn } from '@bem-react/classname'
 
-const CnUseConnect = cn('useConnect')
+import './account.scss'
 
-export const UseConnect: FC = () => {
-    const { connect, connected, connecting, error, address } = useConnect()
+const CnAccount = cn('account')
+
+export const Account: FC = () => {
+    const { connect, connected, connecting, address } = useConnect()
     const { disconnect, disconnecting } = useDisconnect()
 
     const connectHandler = () => {
@@ -15,8 +17,9 @@ export const UseConnect: FC = () => {
     }
 
     return (
-        <div className={CnUseConnect()}>
-            <div>
+        <div className={CnAccount()}>
+            <h2>Connect wallet</h2>
+            <div className={CnAccount('status')}>
                 {connected ? (
                     <p>
                         Wallet connected: <b>{address}</b>

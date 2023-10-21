@@ -1,0 +1,65 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #141414;
+
+    &-logo {
+        display: flex;
+        align-items: center;
+
+        font-size: 24px;
+        font-weight: 600;
+
+        margin-bottom: 36px;
+
+        & b {
+            font-weight: 600;
+            color: #17c57d;
+        }
+
+        & svg {
+            width: 32px;
+            height: 32px;
+
+            margin-right: 10px; 
+        }
+    }
+
+    &-navigation {
+        display: flex;
+        flex-direction: column;
+        
+        width: calc(100% + 20px);
+
+        margin-left: -10px;
+        margin-right: -10px;
+
+        &Item {
+            text-decoration: none;
+            
+            cursor: pointer;
+
+            padding: 10px;
+            border-radius: 10px;
+            
+            display: flex;
+            align-items: center;
+
+            color: #fff;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.12);
+            }
+
+            & svg {
+                margin-right: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.decrypt {
+    & .input {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &-values {
+        margin-bottom: 20px;
+        
+        &Item {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 5px;
+        }
+    }
+
+    & .button {
+        margin-top: 20px;
+    }
+}
