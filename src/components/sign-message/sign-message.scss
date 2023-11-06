@@ -1,0 +1,18 @@
+.sign-message {
+    & .button {
+        margin-top: 20px;
+    }
+
+    &-values {
+        margin-bottom: 20px;
+        
+        &Item {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 5px;
+
+            word-break: break-all;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { DecryptPermission, WalletProvider } from 'aleo-hooks'
 import { LeoWalletAdapter } from '@demox-labs/aleo-wallet-adapter-leo'
-import { Decrypt, Sidebar, ViewKey } from './components'
+import { Decrypt, ExecuteTransaction, Sidebar, ViewKey, SignMessage } from './components'
 import { Account } from './components/account'
 import { Route, Routes } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
@@ -11,6 +11,7 @@ import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import './App.css'
+import { TransactionStatus } from './components/transaction-status'
 
 SyntaxHighlighter.registerLanguage('jsx', jsx)
 
@@ -95,6 +96,45 @@ export const Account: FC = () => {
                                         </div>
                                         <div className="app-block">
                                             <Decrypt />
+                                        </div>
+                                    </>
+                                }
+                            />
+                            <Route
+                                path="/useSignMessage"
+                                element={
+                                    <>
+                                        <div className="app-block">
+                                            <Account />
+                                        </div>
+                                        <div className="app-block">
+                                            <SignMessage />
+                                        </div>
+                                    </>
+                                }
+                            />
+                            <Route
+                                path="/useTransaction"
+                                element={
+                                    <>
+                                        <div className="app-block">
+                                            <Account />
+                                        </div>
+                                        <div className="app-block">
+                                            <ExecuteTransaction />
+                                        </div>
+                                    </>
+                                }
+                            />
+                            <Route
+                                path="/useTransactionStatus"
+                                element={
+                                    <>
+                                        <div className="app-block">
+                                            <Account />
+                                        </div>
+                                        <div className="app-block">
+                                            <TransactionStatus />
                                         </div>
                                     </>
                                 }

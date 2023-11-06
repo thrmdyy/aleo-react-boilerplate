@@ -12,5 +12,10 @@ interface IInputProps
     > {}
 
 export const Input: FC<IInputProps> = (props) => {
-    return <input {...props} className={CnInput()} />
+    return (
+        <div className={CnInput()}>
+            <div className={CnInput('label')}>{props.placeholder}</div>
+            <input {...props} />
+        </div>
+    )
 }
