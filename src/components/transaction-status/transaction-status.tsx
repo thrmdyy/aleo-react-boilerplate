@@ -11,7 +11,7 @@ import './transaction-status.scss'
 const CnTransactionStatus = cn('transactionStatus')
 
 export const TransactionStatus: FC = () => {
-    const { data, error, loading, requestTransactionStatus } = useTransactionStatus()
+    const { transactionStatus, error, loading, requestTransactionStatus } = useTransactionStatus()
     const [transactionId, setTransactionId] = useState('')
 
     const transactionIdChangeCallback = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +29,9 @@ export const TransactionStatus: FC = () => {
             <div className={CnTransactionStatus('values')}>
                 <div className={CnTransactionStatus('valuesItem')}>Loading: {String(loading)}</div>
                 <div className={CnTransactionStatus('valuesItem')}>Error: {error?.message}</div>
-                <div className={CnTransactionStatus('valuesItem')}>Transaction status: {data}</div>
+                <div className={CnTransactionStatus('valuesItem')}>
+                    Transaction status: {transactionStatus}
+                </div>
             </div>
 
             <Input

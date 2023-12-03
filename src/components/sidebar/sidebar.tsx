@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { cn } from '@bem-react/classname'
-import { User, Hash, Key, MessageSquare, Settings, Star } from 'react-feather'
+import { User, Hash, Key, MessageSquare, Settings, Star, Clock, Lock } from 'react-feather'
 import { Link } from 'react-router-dom'
 
 import './sidebar.scss'
@@ -53,6 +53,14 @@ export const Sidebar: FC = () => {
                 <Link to="/useTransactionStatus" className={CnSidebar('navigationItem')}>
                     <Star />
                     useTransactionStatus
+                </Link>
+                <Link to="/useWait" className={CnSidebar('navigationItem')}>
+                    <Clock />
+                    useWait
+                </Link>
+                <Link to="/useRecords" className={CnSidebar('navigationItem')}>
+                    <Lock />
+                    useRecords
                 </Link>
             </div>
         </div>

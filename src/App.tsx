@@ -1,7 +1,15 @@
 import { useMemo } from 'react'
 import { DecryptPermission, WalletProvider } from 'aleo-hooks'
 import { LeoWalletAdapter } from '@demox-labs/aleo-wallet-adapter-leo'
-import { Decrypt, ExecuteTransaction, Sidebar, ViewKey, SignMessage } from './components'
+import {
+    Decrypt,
+    ExecuteTransaction,
+    Sidebar,
+    ViewKey,
+    SignMessage,
+    Wait,
+    Records,
+} from './components'
 import { Account } from './components/account'
 import { Route, Routes } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
@@ -96,6 +104,32 @@ export const Account: FC = () => {
                                         </div>
                                         <div className="app-block">
                                             <Decrypt />
+                                        </div>
+                                    </>
+                                }
+                            />
+                            <Route
+                                path="/useWait"
+                                element={
+                                    <>
+                                        <div className="app-block">
+                                            <Account />
+                                        </div>
+                                        <div className="app-block">
+                                            <Wait />
+                                        </div>
+                                    </>
+                                }
+                            />
+                            <Route
+                                path="/useRecords"
+                                element={
+                                    <>
+                                        <div className="app-block">
+                                            <Account />
+                                        </div>
+                                        <div className="app-block">
+                                            <Records />
                                         </div>
                                     </>
                                 }
